@@ -62,6 +62,7 @@ export default {
 	data: () => ({
 		selectedPerformanceTab: null,
 		timelineTags: [
+            { tag: 'observer', icon: 'eye', title: 'Observer' },
 			{ tag: 'events', icon: 'zap', title: 'Events' },
 			{ tag: 'databaseQueries', icon: 'database', title: 'Database' },
 			{ tag: 'cacheQueries', icon: 'paperclip', title: 'Cache' },

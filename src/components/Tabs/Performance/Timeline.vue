@@ -173,6 +173,7 @@ export default {
 			} else {
 				this.hiddenTags.push(tag)
 			}
+            this.refreshEvents()
 		},
 
 		resolveTags(tags) {

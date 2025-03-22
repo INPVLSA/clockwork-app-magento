@@ -105,6 +105,10 @@ export class TimelineEvent {
 		this.end = this.start + this.duration / 1000
 		this.tags = data.tags || []
 		this.data = data.data
+        
+        if (this.data && this.data.tags) {
+            this.tags = this.data.tags
+        }
 	}
 
 	present(timeline, timelineWidth) {

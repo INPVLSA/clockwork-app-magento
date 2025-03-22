@@ -1,3 +1,7 @@
+### Magento module repository this app used in
+
+https://github.com/INPVLSA/magento-clockwork
+
 ### Original clockwork-app repository
 
 https://github.com/underground-works/clockwork-app
