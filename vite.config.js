@@ -23,5 +23,14 @@ export default defineConfig(({ command, mode }) => ({
         api: 'modern-compiler'
       }
     }
-  }
+  },
+    server: {
+      allowedHosts: 'all',
+      fs: {
+          allow: ['..']
+      },
+      cors: {
+          origin: 'ce247.docker.loc'
+      }
+    }
 }))

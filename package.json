@@ -15,7 +15,8 @@
     "build-share": "VUE_APP_PLATFORM=share vite build && del-cli dist/share && move-cli --mkdirp build dist/share",
     "build-share-dev": "VUE_APP_PLATFORM=share vite build --mode=development && del-cli dist/share && move-cli --mkdirp build dist/share",
     "build-web": "vite build && del-cli dist/web && move-cli --mkdirp build dist/web",
-    "build-web-dev": "vite build --mode=development && del-cli dist/web && move-cli --mkdirp build dist/web"
+    "build-web-dev": "vite build --mode=development && del-cli dist/web && move-cli --mkdirp build dist/web",
+    "build-web-magento": "vite build && del-cli dist/clockwork-app && move-cli --mkdirp build dist/clockwork-app"
   },
   "dependencies": {
     "@sqltools/formatter": "^1.2.2",
