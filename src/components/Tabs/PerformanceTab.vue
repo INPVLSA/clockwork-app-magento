@@ -62,6 +62,7 @@ export default {
 	data: () => ({
 		selectedPerformanceTab: null,
 		timelineTags: [
+            { tag: 'layout', icon: 'layout', title: 'Layout'},
             { tag: 'template', icon: 'code', title: 'Template'},
 			{ tag: 'events', icon: 'zap', title: 'Events' },
             { tag: 'observer', icon: 'eye', title: 'Observer' },

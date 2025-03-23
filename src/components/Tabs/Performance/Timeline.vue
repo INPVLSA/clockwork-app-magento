@@ -276,7 +276,8 @@ $timeline-colors-light: (
 	"red":    ( normal: hsl(359deg 57% 55%), alternative: hsl(359deg 57% 70%) ),
 	"green":  ( normal: hsl(109deg 52% 45%), alternative: hsl(109deg 52% 60%) ),
 	"purple": ( normal: hsl(273deg 57% 55%), alternative: hsl(273deg 57% 70%) ),
-	"grey":   ( normal: hsl(240deg 5% 30%),  alternative: hsl(240deg 5% 65%) )
+	"grey":   ( normal: hsl(240deg 5% 30%),  alternative: hsl(240deg 5% 65%) ),
+    "pinkp":  ( normal: hsl(319deg 52% 60%), alternative: hsl(319deg 52% 60%) )
 );
 
 $timeline-colors-dark: (
@@ -284,7 +285,8 @@ $timeline-colors-dark: (
 	"red":    ( normal: hsl(359deg 52% 60%), alternative: hsl(359deg 52% 45%) ),
 	"green":  ( normal: hsl(109deg 47% 50%), alternative: hsl(109deg 47% 35%) ),
 	"purple": ( normal: hsl(273deg 52% 60%), alternative: hsl(273deg 52% 45%) ),
-	"grey":   ( normal: hsl(240deg 5% 50%),  alternative: hsl(240deg 5% 30%) )
+	"grey":   ( normal: hsl(240deg 5% 50%),  alternative: hsl(240deg 5% 30%) ),
+    "pinkp":  ( normal: hsl(319deg 52% 60%), alternative: hsl(319deg 52% 60%) )
 );
 
 .timeline {

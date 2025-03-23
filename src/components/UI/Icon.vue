@@ -53,6 +53,7 @@ import XCircleIcon from 'feather-icons/dist/icons/x-circle.svg?raw'
 import ZapIcon from 'feather-icons/dist/icons/zap.svg?raw'
 import EyeIcon from 'feather-icons/dist/icons/eye.svg?raw'
 import CodeIcon from 'feather-icons/dist/icons/code.svg?raw'
+import LayoutIcon from 'feather-icons/dist/icons/layout.svg?raw'
 
 let icons = {
 	ActivityIcon, AlertCircleIcon, AlertTriangleIcon, ArrowDownCircleIcon, CheckCircleIcon, ChevronDownIcon,
@@ -60,7 +61,7 @@ let icons = {
 	DiscIcon, DownloadCloudIcon, Edit2Icon, GithubIcon, HashIcon, HeartIcon, HelpCircleIcon, ImageIcon, InfoIcon,
 	LayersIcon, LinkIcon, ListIcon, LockIcon, MailIcon, MapIcon, MenuIcon, PaperclipIcon, PercentIcon, PieChartIcon,
 	SearchIcon, SettingsIcon, ShareIcon, SlashIcon, SmileIcon, StarIcon, TerminalIcon, Trash2Icon, TwitterIcon,
-	UploadCloudIcon, UserIcon, UsersIcon, XIcon, XCircleIcon, ZapIcon, EyeIcon, CodeIcon
+	UploadCloudIcon, UserIcon, UsersIcon, XIcon, XCircleIcon, ZapIcon, EyeIcon, CodeIcon, LayoutIcon
 }
 
 export default {
