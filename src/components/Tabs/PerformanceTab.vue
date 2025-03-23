@@ -65,6 +65,7 @@ export default {
             { tag: 'template', icon: 'code', title: 'Template'},
 			{ tag: 'events', icon: 'zap', title: 'Events' },
             { tag: 'observer', icon: 'eye', title: 'Observer' },
+            { tag: 'collection', icon: 'layers', title: 'Collection'},
 			{ tag: 'databaseQueries', icon: 'database', title: 'Database' },
 			{ tag: 'cacheQueries', icon: 'paperclip', title: 'Cache' },
 			{ tag: 'redisCommands', icon: 'layers', title: 'Redis' },
