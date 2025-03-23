@@ -62,8 +62,9 @@ export default {
 	data: () => ({
 		selectedPerformanceTab: null,
 		timelineTags: [
-            { tag: 'observer', icon: 'eye', title: 'Observer' },
+            { tag: 'template', icon: 'code', title: 'Template'},
 			{ tag: 'events', icon: 'zap', title: 'Events' },
+            { tag: 'observer', icon: 'eye', title: 'Observer' },
 			{ tag: 'databaseQueries', icon: 'database', title: 'Database' },
 			{ tag: 'cacheQueries', icon: 'paperclip', title: 'Cache' },
 			{ tag: 'redisCommands', icon: 'layers', title: 'Redis' },
