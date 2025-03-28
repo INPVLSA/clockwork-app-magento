@@ -10,9 +10,15 @@
 
 			<details-table :title="section.title" :columns="section.data[0].map(item => item.key)" :items="section.data" :filter="filters[sectionIndex]" v-if="section.showAs == 'table'">
 				<template v-slot:body="{ items }">
-					<tr v-for="item in items">
+					<tr v-for="item in items" :class="item[0].value === 'sql' ? (item[1].is_sql = true) : ''">
 						<td v-for="item in item">
-							<pretty-print :data="item.value"></pretty-print>
+							<pretty-print :data="item.value" v-if="!item.is_sql"></pretty-print>
+
+                            <div class="database-query" v-else>
+                                <div class="database-query-content">
+                                    <highlighted-code language="sql" :code="item.value"></highlighted-code>
+                                </div>
+                            </div>
 						</td>
 					</tr>
 				</template>
@@ -26,10 +32,12 @@ import DetailsTable from '../UI/DetailsTable'
 import PrettyPrint from '../UI/PrettyPrint'
 
 import createFilter from '../../features/filter'
+import HighlightedCode from "../UI/HighlightedCode.vue";
+import StackTrace from "../UI/StackTrace.vue";
 
 export default {
 	name: 'UserTab',
-	components: { DetailsTable, PrettyPrint },
+	components: {StackTrace, HighlightedCode, DetailsTable, PrettyPrint },
 	props: [ 'active', 'userTab' ],
 	data: () => ({
 		filters: []
