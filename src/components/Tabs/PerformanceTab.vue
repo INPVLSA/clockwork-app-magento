@@ -30,9 +30,6 @@
 				<a class="performance-tab" :class="{ 'active': isTabActive('client-side') }" href="#" @click.prevent="showTab('client-side')" v-if="isClientSideTabAvailable">
 					<icon name="smile"></icon> Client-side
 				</a>
-				<a class="performance-tab" :class="{ 'active': isTabActive('profiler') }" href="#" @click.prevent="showTab('profiler')" v-if="$platform.hasFeature('profiler')">
-					<icon name="clock"></icon> Profiler
-				</a>
 			</div>
 
 			<performance-log :issues="performanceIssues" :slow-queries="databaseSlowQueries" v-if="isTabActive('issues')"></performance-log>

@@ -602,3 +602,15 @@ code {
 		border-color: rgb(145, 145, 145) transparent transparent transparent;
 	}
 }
+
+.cache-type-load {
+    color: hsl(109, 47%, 50%);
+}
+
+.cache-type-delete {
+    color: hsl(359, 52%, 60%);
+}
+
+.cache-type-write {
+    color: hsl(212, 83%, 60%);
+}

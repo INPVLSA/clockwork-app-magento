@@ -35,7 +35,7 @@
 			<template slot="body" v-slot:body="{ items }">
 				<tr v-for="query, index in items" :key="`${$request.id}-${index}`">
 					<td v-if="columns.includes('Connection')">{{query.connection}}</td>
-					<td class="cache-query-type">{{query.type}}</td>
+					<td class="cache-query-type" :class="'cache-type-' + query.type">{{query.type}}</td>
 					<td>{{query.key}}</td>
 					<td>
 						<div class="database-query">
