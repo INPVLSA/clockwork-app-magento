@@ -30,7 +30,7 @@ export default defineConfig(({ command, mode }) => ({
           allow: ['..']
       },
       cors: {
-          origin: 'ce247.docker.loc'
+          origin: 'myg.docker.loc'
       }
     }
 }))

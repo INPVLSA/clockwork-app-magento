@@ -170,10 +170,15 @@ export default {
 			display: flex;
 			height: 100%;
 			margin-right: 12px;
+            gap: 1rem;
 
 			&:last-child {
 				margin-right: 0;
 			}
+
+            &.header-group-icons {
+                gap: .2rem;
+            }
 		}
 
 		.header-item {

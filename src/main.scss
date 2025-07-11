@@ -614,3 +614,10 @@ code {
 .cache-type-write {
     color: hsl(212, 83%, 60%);
 }
+
+.content-env {
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

@@ -81,6 +81,22 @@
 				</a>
 			</div>
 
+            <div class="content-env">
+                <span class="type-text">
+                    <template v-if="$request">
+                        <template v-if="$request.storage === 'FileStorage'">
+
+                            <span style="color: hsl(359, 45%, 60%)" title="FileStorage used for storing this timeline. Can be slow.">!<icon name="database" /> File Storage</span>
+                        </template>
+                        <template v-else>
+                            <icon name="database"/>
+                            &nbsp;
+                            <span>{{ $request ? storageStringMap[$request.storage] ?? $request.storage : '' }}</span>
+                        </template>
+                    </template>
+                </span>
+            </div>
+
 			<div class="content-meta">
 				<div class="meta-date" v-if="$request && $request.time">
 					{{ $date($request.time * 1000, 'y-MM-dd HH:mm:ss') }}
@@ -104,6 +120,14 @@ import TestTab from './Tabs/TestTab'
 
 export default {
 	name: 'RequestSidebar',
+    data() {
+        return {
+            storageStringMap: {
+                'SqlStorage': 'SQL Storage',
+                'RedisStorage': 'Redis Storage',
+            },
+        }
+    },
 	components: { CommandTab, ExceptionSection, ParentRequest, QueueJobTab, RequestTab, TestTab },
 	computed: {
 		shareUrl() {

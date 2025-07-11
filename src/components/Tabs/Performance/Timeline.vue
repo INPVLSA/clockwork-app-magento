@@ -3,26 +3,27 @@
 		<details-table title="Timeline" icon="pie-chart" :columns="columns" :items="presentedEvents" :filter="filter" :no-table-head="! showDetails" filter-example="database query duration:>50" :per-page="100">
 			<template v-slot:toolbar="{ filter }">
 				<div class="header-group">
-					<label class="header-toggle">
+                    <label class="header-toggle" title="Hide native Magento 2 timeline events. Only events <5ms will be hidden.">
+                        <input type="checkbox" v-model="hideNative">
+                        Hide "spam" native events
+                    </label>
+
+                    <label class="header-toggle">
 						<input type="checkbox" v-model="condense">
 						Condense
 					</label>
 				</div>
 
-				<div class="header-group" v-if="availableTags.length">
+				<div class="header-group header-group-icons" v-if="availableTags.length">
 					<a v-for="tag in availableTags" href="#" class="header-item" :class="{ 'active': hiddenTags && ! hiddenTags.includes(tag.tag) }" :title="tag.title" @click="toggleTag(tag.tag)">
 						<icon :name="tag.icon"></icon>
 					</a>
-				</div>
 
-				<div class="header-group">
 					<div class="header-search">
 						<input type="search" v-model="filter.input" placeholder="Search...">
 						<icon name="search"></icon>
 					</div>
-				</div>
 
-				<div class="header-group">
 					<a href="#" title="Toggle details" class="header-item" :class="{ 'active': showDetails }" @click.prevent="toggleDetails">
 						<icon name="list"></icon>
 					</a>
@@ -38,7 +39,7 @@
 										<icon :name="tag.icon" :title="tag.title"></icon>
 									</span>
 								</span>
-								{{group.name}}
+								{{ group.name.replace('/ns', '') }}
 								<span v-if="! group.condensed">{{formatTiming(group.duration)}}</span>
 							</div>
 
@@ -149,7 +150,9 @@ export default {
 
 		filter: createFilter([
 			{ tag: 'duration', type: 'number' }
-		], item => item.description)
+		], item => item.description),
+
+        hideNative: false
 	}),
 	computed: {
 		availableTags() {
@@ -201,6 +204,13 @@ export default {
 
 			let timeline = this.timeline.filter(this.filter, this.hiddenTags)
 
+            if (this.hideNative) {
+                timeline.events = timeline.events.filter((event) => {
+
+                    return !event.name.endsWith('/ns');
+                });
+            }
+
 			if (this.condense) timeline = timeline.condense()
 
 			this.presentedEvents = timeline.present(timelineWidth)
@@ -228,6 +238,10 @@ export default {
 		}
 	},
 	watch: {
+        hideNative(val, old) {
+            this.refreshEvents();
+        },
+
 		condense(val, old) {
 			// skip initial assignment from settings to avoid multiple refreshes on mounted
 			if (old === undefined) return
